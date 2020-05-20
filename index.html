@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lover ?</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/btn.css">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="./pt/tim1.png"/>
+</head>
+<body>
+    <audio id="myAudio">
+        <source src="mp3/huan.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+      <iframe width="0" height="0" src="https://www.youtube.com/embed/tZeZJFr0HVI?start=1?rel=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <div class="tittle" id="tt"> Do you want a lover ?</div>
+    <div class="container center">
+        <input name="radio" id="opt1" type="button" onclick="playAudio()">
+        <label for="opt1" class="label1">
+            <div class="btn">Yes</div>
+        </label>
+        <input type="button"  name="radio" id="opt2" onclick="noClick()">
+        <label for="opt2" class="label2">
+            <div class="btn">No</div>
+        </label>
+    </div>   
+  <footer class="center foot">Created By@Luong Phan Thanh Dat</footer>
+    <script type="text/javascript">
+        var x = document.getElementById("myAudio"); 
+function playAudio() { 
+    
+  x.play(); 
+} 
+function noClick(){
+    document.getElementById("tt").textContent = "Good guy !";
+    var interval1 = setInterval(() => {
+        document.getElementById("tt").textContent = "Do you want a lover ?";
+        clearInterval(interval1);
+    }, 2000);
+}
+
+        var inter = setInterval(() => {
+            var body = document.querySelector("body");
+            var bubbles = document.createElement("span");
+            var x = Math.random()*1400;
+            var y = Math.random()*800;
+            bubbles.style.left=x+'px';
+            bubbles.style.top=y+'px';
+            var size = Math.random()*100;
+            bubbles.style.backgroundImage = "url(./pt/tim1.png)";
+            bubbles.style.width=size+'px';
+            bubbles.style.height=size+'px';
+            body.appendChild(bubbles);
+
+            setTimeout(() => {
+               bubbles.remove();
+
+            }, 4000);
+        }, 100);
+
+    </script>
+</body>
+</html>
